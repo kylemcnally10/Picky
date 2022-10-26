@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Picker</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"
+        defer></script>
+    <!--My CSS-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+
+
+
+<body class="dashBodyBlue">
+    <div class="dashContainer">
+        <div class="dashBlueBg">
+            <div class="welcomeBar">
+                <h1 class="welcomeText">Pick Your Favorites!</h1>
+                <h1 class="welcomeText">Code: {{session['round_id']}} </h1>
+            </div>
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+                <div class="carousel-indicators indicatorLocation">
+                    {%for restaurant in restaurants%}
+                    <div>Hello World</div>
+                    {% if loop.index == session['active_slide'] %}
+                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide-to="{{loop.index - 1}}" class="active" aria-current="true"
+                        aria-label="Slide 1"></button>
+                    {% else %}
+                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide-to="{{loop.index - 1}}" aria-current="true" aria-label="Slide 2"></button>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="carousel-inner">
+                    {%for restaurant in restaurants%}
+                    {% if loop.index == session['active_slide'] %}
+                    <div class="carousel-item active carouselHeight" data-bs-interval="300000">
+                        {% else %}
+                        <div class="carousel-item carouselHeight" data-bs-interval="300000">
+                            {% endif %}
+                            <div class="d-flex justify-content-evenly align-center">
+                                <div class="border border-1 border-light">
+                                    <img class="border border-light resultsImg" src="{{restaurant.image_url}}">
+                                </div>
+                                <div class="d-flex flex-column justify-content-center text-center text-light">
+                                    <a class="resultsTitle" href="{{restaurant.url}}" target="_blank">
+                                        <p>{{restaurant.name}}</p>
+                                    </a>
+                                    <p>{{restaurant.rating}}/5 - {{restaurant.review_count}} Reviews</p>
+                                    <p>{{restaurant.location}}</p>
+                                    <div class="d-flex justify-content-evenly">
+                                        <form action="/save/pick" id="myForm" method="post">
+                                            <input type="hidden" name="index" value="{{loop.index}}">
+                                            <input type="hidden" name="name" value="{{restaurant.name}}">
+                                            <input type="hidden" name="rating" value="{{restaurant.rating}}">
+                                            <input type="hidden" name="review_count"
+                                                value="{{restaurant.review_count}}">
+                                            <input type="hidden" name="location" value="{{restaurant.location}}">
+                                            <input type="hidden" name="url" value="{{restaurant.url}}">
+                                            <input type="hidden" name="image_url" value="{{restaurant.image_url}}">
+                                            <button type="submit" value="Submit" class="dashButtonBlue">Add to My
+                                                Picks</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <button class="carousel-control-prev arrowLocationLeft carPrevBtn" type="button"
+                        data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next arrowLocationRight carNextBtn" type="button"
+                        data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <div class="logoutBar">
+                    <a href="/new/criteria"><button class="dashButtonRed">Search Again</button></a>
+                    <a href="/results/combined"><button class="dashButtonRed">Finished</button></a>
+                </div>
+            </div>
+        </div>
+
+</body>
+
+
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Sliding Form</title>
+    <link rel="stylesheet" type="text/css" href="/flask_app/static/css/style.css">
+</head>
+
+<body class="slideBody">
+    <div class="container">
+        <div class="blueBg">
+            <div class="box signin">
+                <h2>Already Have an Account?</h2>
+                <button class="signinBtn">Sign In</button>
+            </div>
+            <div class="box signup">
+                <h2>Don't Have an Account?</h2>
+                <button class="signupBtn">Sign Up</button>
+            </div>
+        </div>
+        <div class="formBx">
+            <div class="form signinForm">
+                <form action="/login" method="post">
+                    <h3>Sign In</h3>
+                    <input type="email" placeholder="Email" name="email">
+                    {%for message in get_flashed_messages(category_filter=["err_user_login_email"]) %}
+                    <p class="alert alert-danger">{{ message }}</p>
+                    {% endfor %}
+                    <input type="password" placeholder="Password" name="password">
+                    {%for message in get_flashed_messages(category_filter=["err_user_login_password"]) %}
+                    <p class="alert alert-danger">{{ message }}</p>
+                    {% endfor %}
+                    <input type="submit" value="Login">
+                </form>
+            </div>
+            <div class="form signupForm">
+                <form action="/prcoess/user" method="post">
+                    <h3>Sign Up</h3>
+                    <input type="text" placeholder="Full Name" name="full_name">
+                    {%for message in get_flashed_messages(category_filter=["err_user_full_name"]) %}
+                    <p class="alert alert-danger">{{ message }}</p>
+                    {% endfor %}
+                    <input type="text" placeholder="Username" name="username">
+                    {%for message in get_flashed_messages(category_filter=["err_user_username"]) %}
+                    <p class="alert alert-danger">{{ message }}</p>
+                    {% endfor %}
+                    <input type="text" placeholder="Email" name="email">
+                    {%for message in get_flashed_messages(category_filter=["err_user_email"]) %}
+                    <p class="alert alert-danger">{{ message }}</p>
+                    {% endfor %}
+                    <input type="password" placeholder="Password" name="password">
+                    {%for message in get_flashed_messages(category_filter=["err_user_password"]) %}
+                    <p class="alert alert-danger">{{ message }}</p>
+                    {% endfor %}
+                    <input type="password" placeholder="Confirm Password" name="confirm">
+                    {%for message in get_flashed_messages(category_filter=["err_user_confirm"]) %}
+                    <p class="alert alert-danger">{{ message }}</p>
+                    {% endfor %}
+                    <input type="submit" value="Register">
+                    {%for message in get_flashed_messages(category_filter=["success_user"]) %}
+                    <p class="alert alert-success">{{ message }}</p>
+                    {% endfor %}
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const signinBtn = document.querySelector('.signinBtn');
+        const signupBtn = document.querySelector('.signupBtn');
+        const formBx = document.querySelector('.formBx');
+        const slideBody = document.querySelector('.slideBody');
+
+        signupBtn.onclick = function () {
+            formBx.classList.add('active')
+            slideBody.classList.add('active')
+        }
+
+        signinBtn.onclick = function () {
+            formBx.classList.remove('active')
+            slideBody.classList.remove('active')
+        }
+
+    </script>
+</body>
+
+</html>

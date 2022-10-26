@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+* {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.dashBodyBlue {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #9e36f4;
+}
+
+.dashBodyRed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #9e36f4;
+}
+
+.dashContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 800px;
+    height: 500px;
+}
+
+.dashBlueBg {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    height: 420px;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 45px rgba(0, 0, 0, 0.15);
+}
+
+.dashButtonBlue {
+    cursor: pointer;
+    padding: 10px 20px;
+    color: #9e36f4;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    margin: 10px;
+    background: white;
+    border-radius: 100px;
+}
+
+.welcomeBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.welcomeText {
+    padding: 10px 20px;
+    margin: 10px;
+    color: white;
+}
+
+.actionContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+}
+
+.inviteContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    margin-top: -10px;
+    color: white;
+    width: 50%;
+}
+
+.joinContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+    width: 50%;
+}
+
+.criteriaContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    height: auto;
+}
+
+.resultsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    height: auto;
+}
+
+.criteriaInput {
+    width: 75%;
+    margin: 10px;
+    padding: 10px;
+    color: #9e36f4;
+    outline: #9e36f4;
+    font-size: 16px;
+    text-align: center;
+    background: white;
+    overflow: hidden;
+    border: 1px solid white;
+}
+
+.inviteInput {
+    width: 75%;
+    margin: 10px;
+    margin-top: -5px;
+    padding: 10px;
+    color: #9e36f4;
+    outline: #9e36f4;
+    font-size: 16px;
+    text-align: center;
+    background: white;
+    overflow: hidden;
+    border: 1px solid white;
+}
+
+.logoutBar {
+    display: flex;
+    justify-content: space-between;
+    width: 98%;
+    padding: 10px;
+}
+
+
+.dashButtonRed {
+    cursor: pointer;
+    padding: 10px 20px;
+    color: #9e36f4;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    margin: 10px;
+    background: white;
+    border-radius: 100px;
+}
+
+/* .welcomeBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+} */
+
+.resultsImg {
+    max-height: 200px;
+    /* max-width: 300px; */
+}
+
+.carouselHeight {
+    width: 800px !important;
+}
+
+.searchForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 75%;
+}
+
+.indicatorLocation {
+    bottom: -95px;
+}
+
+.resultsTitle {
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.arrowLocationLeft {
+    justify-content: start;
+}
+
+.arrowLocationRight {
+    justify-content: end;
+}
