@@ -17,22 +17,22 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dashboard.css') }}">
 </head>
 
-<body class="dashBodyBlue">
-    <div class="dashContainer">
-        <div class="dashBlueBg">
-            <div class="welcomeBar">
-                <h1 class="welcomeText">What Sounds Good?</h1>
-                <h1 class="welcomeText">Code: {{session['round_id']}} </h1>
+<body class="boxBody">
+    <div class="boxContainer">
+        <div class="boxBg">
+            <div class="instructionBar">
+                <h1 class="instructionText">What Sounds Good?</h1>
+                <h1 class="instructionText">Code: {{session['round_id']}} </h1>
             </div>
             <form class="searchForm" action="/process" method="post">
                 <input class="criteriaInput" type="text" placeholder="Pizza, Mexican, Fast Food, Sushi..." name="term">
                 <input class="criteriaInput" type="text" placeholder="Irvine, New York City, Seattle, Houston..."
                     name="location">
-                <input class="dashButtonBlue" type="submit" value="Search">
+                <input class="boxBtn" type="submit" value="Search">
             </form>
             <div class="logoutBar">
-                <a href="/dashboard"><button class="dashButtonRed">Dashboard</button></a>
-                <a href="/new"><button class="dashButtonRed">Invite Friends</button></a>
+                <a href="/dashboard"><button class="boxBtn">Dashboard</button></a>
+                <a href="/new"><button class="boxBtn">Invite Friends</button></a>
             </div>
         </div>
     </div>

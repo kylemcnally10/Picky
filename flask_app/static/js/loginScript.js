@@ -1,19 +1,17 @@
-// Login/Registration Slider
-
-const signinBtn = document.querySelector('.signinBtn');
-const signupBtn = document.querySelector('.signupBtn');
-const formBx = document.querySelector('.formBx');
-const slideBody = document.querySelector('.slideBody');
+const loginBtn = document.querySelector('.loginBtn');
+const registerBtn = document.querySelector('.registerBtn');
+const formBox = document.querySelector('.formBox');
+const loginBody = document.querySelector('.loginBody');
 
 
-signupBtn.onclick = function () {
-    formBx.classList.add('active')
-    slideBody.classList.add('active')
+registerBtn.onclick = function () {
+    formBox.classList.add('active')
+    loginBody.classList.add('active')
 }
 
-signinBtn.onclick = function () {
-    formBx.classList.remove('active')
-    slideBody.classList.remove('active')
+loginBtn.onclick = function () {
+    formBox.classList.remove('active')
+    loginBody.classList.remove('active')
 }
 
 function added() {

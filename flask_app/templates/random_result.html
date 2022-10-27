@@ -17,12 +17,12 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dashboard.css') }}">
 </head>
 
-<body class="dashBodyBlue">
-    <div class="dashContainer">
-        <div class="dashBlueBg">
-            <div class="welcomeBar">
-                <h1 class="welcomeText">Your Random Winner!</h1>
-                <h1 class="welcomeText">Code: {{session['round_id']}} </h1>
+<body class="boxBody">
+    <div class="boxContainer">
+        <div class="boxBg">
+            <div class="instructionBar">
+                <h1 class="instructionText">Your Random Winner!</h1>
+                <h1 class="instructionText">Code: {{session['round_id']}} </h1>
             </div>
             <div>
                 {%for pick in picks%}
@@ -42,8 +42,8 @@
                 {% endfor %}
             </div>
             <div class="logoutBar">
-                <a href="/new/criteria"><button class="dashButtonRed">Search Again</button></a>
-                <a href="/dashboard"><button class="dashButtonRed">Dashboard</button></a>
+                <a href="/new/criteria"><button class="boxBtn">Search Again</button></a>
+                <a href="/dashboard"><button class="boxBtn">Dashboard</button></a>
             </div>
         </div>
     </div>

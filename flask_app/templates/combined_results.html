@@ -17,12 +17,12 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dashboard.css') }}">
 </head>
 
-<body class="dashBodyBlue">
-    <div class="dashContainer">
-        <div class="dashBlueBg">
-            <div class="welcomeBar">
-                <h1 class="welcomeText">Your Combined Picks!</h1>
-                <h1 class="welcomeText">Code: {{session['round_id']}} </h1>
+<body class="boxBody">
+    <div class="boxContainer">
+        <div class="boxBg">
+            <div class="instructionBar">
+                <h1 class="instructionText">Your Combined Picks!</h1>
+                <h1 class="instructionText">Code: {{session['round_id']}} </h1>
             </div>
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
                 <div class="carousel-indicators indicatorLocation">
@@ -62,7 +62,7 @@
                                             <input type="hidden" name="location" value="{{pick.location}}">
                                             <input type="hidden" name="url" value="{{pick.url}}">
                                             <input type="hidden" name="image_url" value="{{pick.image_url}}">
-                                            <button class="dashButtonBlue" id="added" onclick="added(this)">Add to My
+                                            <button class="boxBtn" id="added" onclick="added(this)">Add to My
                                                 Picks</button>
                                         </form>
                                     </div>
@@ -83,8 +83,8 @@
                     </button>
                 </div>
                 <div class="logoutBar">
-                    <a href="/new/criteria"><button class="dashButtonRed">Search Again</button></a>
-                    <a href="/results/random"><button class="dashButtonRed">Pick One</button></a>
+                    <a href="/new/criteria"><button class="boxBtn">Search Again</button></a>
+                    <a href="/results/random"><button class="boxBtn">Pick One</button></a>
                 </div>
             </div>
         </div>

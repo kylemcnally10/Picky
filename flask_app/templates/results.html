@@ -19,17 +19,16 @@
 
 
 
-<body class="dashBodyBlue">
-    <div class="dashContainer">
-        <div class="dashBlueBg">
-            <div class="welcomeBar">
-                <h1 class="welcomeText">Pick Your Favorites!</h1>
-                <h1 class="welcomeText">Code: {{session['round_id']}} </h1>
+<body class="boxBody">
+    <div class="boxContainer">
+        <div class="boxBg">
+            <div class="instructionBar">
+                <h1 class="instructionText">Pick Your Favorites!</h1>
+                <h1 class="instructionText">Code: {{session['round_id']}} </h1>
             </div>
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
                 <div class="carousel-indicators indicatorLocation">
                     {%for restaurant in restaurants%}
-                    <div>Hello World</div>
                     {% if loop.index == session['active_slide'] %}
                     <button type="button" data-bs-target="#carouselExampleIndicators"
                         data-bs-slide-to="{{loop.index - 1}}" class="active" aria-current="true"
@@ -67,7 +66,7 @@
                                             <input type="hidden" name="location" value="{{restaurant.location}}">
                                             <input type="hidden" name="url" value="{{restaurant.url}}">
                                             <input type="hidden" name="image_url" value="{{restaurant.image_url}}">
-                                            <button type="submit" value="Submit" class="dashButtonBlue">Add to My
+                                            <button type="submit" value="Submit" class="boxBtn">Add to My
                                                 Picks</button>
                                         </form>
                                     </div>
@@ -88,8 +87,8 @@
                     </button>
                 </div>
                 <div class="logoutBar">
-                    <a href="/new/criteria"><button class="dashButtonRed">Search Again</button></a>
-                    <a href="/results/combined"><button class="dashButtonRed">Finished</button></a>
+                    <a href="/new/criteria"><button class="boxBtn">Search Again</button></a>
+                    <a href="/results/combined"><button class="boxBtn">Finished</button></a>
                 </div>
             </div>
         </div>

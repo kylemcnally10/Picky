@@ -17,27 +17,27 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dashboard.css') }}">
 </head>
 
-<body class="dashBodyBlue">
-    <div class="dashContainer">
-        <div class="dashBlueBg">
-            <div class="welcomeBar">
-                <h1 class="welcomeText">New Search</h1>
-                <h1 class="welcomeText">Code: {{session['round_id']}} </h1>
+<body class="boxBody">
+    <div class="boxContainer">
+        <div class="boxBg">
+            <div class="instructionBar">
+                <h1 class="instructionText">New Search</h1>
+                <h1 class="instructionText">Code: {{session['round_id']}} </h1>
             </div>
             <div class="actionContainer">
                 <div class="inviteContainer">
                     <h2>Invite</h2>
                     <input class="inviteInput" type="text" name="inviteUsername" placeholder="Username">
                     <input class="inviteInput" type="text" name="inviteEmail" placeholder="Email">
-                    <button class="dashButtonBlue">Invite</button>
+                    <button class="boxBtn">Invite</button>
                 </div>
                 <div class="inviteContainer">
                     <h2>Joined</h2>
-                    <a href="/new/criteria"><button class="dashButtonBlue">Start</button></a>
+                    <a href="/new/criteria"><button class="boxBtn">Start</button></a>
                 </div>
             </div>
             <div class="logoutBar">
-                <a href="/dashboard"><button class="dashButtonRed">Dashboard</button></a>
+                <a href="/dashboard"><button class="boxBtn">Dashboard</button></a>
             </div>
         </div>
     </div>

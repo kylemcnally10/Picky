@@ -17,20 +17,20 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dashboard.css') }}">
 </head>
 
-<body class="dashBodyBlue">
-    <div class="dashContainer">
-        <div class="dashBlueBg">
-            <div class="welcomeBar">
-                <h1 class="welcomeText">What to do?</h1>
-                <h1 class="welcomeText">{{session['username']}}</h1>
+<body class="boxBody">
+    <div class="boxContainer">
+        <div class="boxBg">
+            <div class="instructionBar">
+                <h1 class="instructionText">What to do?</h1>
+                <h1 class="instructionText">{{session['username']}}</h1>
             </div>
             <div class="ButtonBox">
-                <a href="/new/round"><button class="dashButtonBlue">Start a Search</button></a>
-                <a href="/join"><button class="dashButtonBlue">Join a Search</button></a>
+                <a href="/new/round"><button class="boxBtn">Start a Search</button></a>
+                <a href="/join"><button class="boxBtn">Join a Search</button></a>
             </div>
             <div class="logoutBar">
-                <button class="dashButtonRed">View History</button>
-                <a href="/logout"><button class="dashButtonRed">Logout</button></a>
+                <button class="boxBtn">View History</button>
+                <a href="/logout"><button class="boxBtn">Logout</button></a>
             </div>
         </div>
     </div>

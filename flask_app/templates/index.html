@@ -17,20 +17,20 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
-<body class="slideBody">
+<body class="loginBody">
     <div class="container">
-        <div class="blueBg">
-            <div class="box signin">
+        <div class="loginBg">
+            <div class="box login">
                 <h2>Already Have an Account?</h2>
-                <button class="signinBtn">Sign In</button>
+                <button class="loginBtn">Sign In</button>
             </div>
-            <div class="box signup">
+            <div class="box register">
                 <h2>Don't Have an Account?</h2>
-                <button class="signupBtn">Sign Up</button>
+                <button class="registerBtn">Register</button>
             </div>
         </div>
-        <div class="formBx">
-            <div class="form signinForm">
+        <div class="formBox">
+            <div class="form loginForm">
                 <form action="/login" method="post">
                     <h3>Sign In</h3>
                     <input type="email" placeholder="Email" name="email">
@@ -47,9 +47,9 @@
                     {% endfor %}
                 </form>
             </div>
-            <div class="form signupForm">
+            <div class="form registerForm">
                 <form action="/process/user" method="post">
-                    <h3>Sign Up</h3>
+                    <h3>Register</h3>
                     <input type="text" placeholder="Full Name" name="full_name">
                     {%for message in get_flashed_messages(category_filter=["err_user_full_name"]) %}
                     <p class="alert alert-danger">{{ message }}</p>
@@ -76,7 +76,7 @@
         </div>
     </div>
 
-    <script src="{{ url_for('static', filename='js/slideScript.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/loginScript.js') }}"></script>
 </body>
 
 </html>

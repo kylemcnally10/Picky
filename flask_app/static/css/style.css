@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-.slideBody {
+.loginBody {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,7 +13,7 @@
     transition: 0.5s;
 }
 
-.slideBody.active {
+.loginBody.active {
     background: #9e36f4;
 }
 
@@ -24,7 +24,7 @@
     margin: 20px;
 }
 
-.blueBg {
+.loginBg {
     position: absolute;
     top: 40px;
     width: 100%;
@@ -36,7 +36,7 @@
     box-shadow: 0 5px 45px rgba(0, 0, 0, 0.15);
 }
 
-.blueBg .box {
+.loginBg .box {
     position: relative;
     width: 50%;
     height: 100%;
@@ -46,14 +46,14 @@
     flex-direction: column;
 }
 
-.blueBg .box h2 {
+.loginBg .box h2 {
     color: white;
     font-size: 1.2em;
     font-weight: 500;
     margin-bottom: 10px;
 }
 
-.blueBg .box button {
+.loginBg .box button {
     cursor: pointer;
     padding: 10px 20px;
     background: white;
@@ -63,7 +63,7 @@
     border: none;
 }
 
-.formBx {
+.formBox {
     position: absolute;
     top: 0;
     left: 0;
@@ -79,11 +79,11 @@
     overflow: hidden;
 }
 
-.formBx.active {
+.formBox.active {
     left: 50%;
 }
 
-.formBx .form {
+.formBox .form {
     position: absolute;
     left: 0;
     width: 100%;
@@ -91,39 +91,39 @@
     transition: 0.75s;
 }
 
-.formBx .signinForm {
+.formBox .loginForm {
     transition-delay: 0s;
 }
 
-.formBx.active .signinForm {
+.formBox.active .loginForm {
     left: -100%;
     transition-delay: 0s;
 }
 
-.formBx .signupForm {
+.formBox .registerForm {
     left: 100%;
     transition-delay: 0s;
 }
 
-.formBx.active .signupForm {
+.formBox.active .registerForm {
     left: 0;
     transition-delay: 0s;
 }
 
-.formBx .form form {
+.formBox .form form {
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 
-.formBx .form form h3 {
+.formBox .form form h3 {
     font-size: 1.5em;
     color: #333;
     margin-bottom: 20px;
     font-weight: 500;
 }
 
-.formBx .form form input {
+.formBox .form form input {
     width: 100%;
     margin-bottom: 20px;
     padding: 10px;
@@ -132,7 +132,7 @@
     border: 1px solid #333;
 }
 
-.formBx .form form input[type="submit"] {
+.formBox .form form input[type="submit"] {
     background: #f38a2f;
     border: none;
     color: #fff;
@@ -140,11 +140,11 @@
     cursor: pointer;
 }
 
-.formBx.active .signupForm input[type="submit"] {
+.formBox.active .registerForm input[type="submit"] {
     background: #9e36f4;
 }
 
-.formBx .form form .forgot {
+.formBox .form form .forgot {
     color: #333
 }
 
@@ -157,30 +157,30 @@
         align-items: center;
     }
 
-    .container .blueBg {
+    .container .loginBg {
         top: 0;
         height: 100%;
     }
 
-    .formBx {
+    .formBox {
         width: 100%;
         height: 500px;
         top: 0;
         box-shadow: none;
     }
 
-    .blueBg .box {
+    .loginBg .box {
         position: absolute;
         width: 100%;
         height: 150px;
         bottom: 0;
     }
 
-    .box.signin {
+    .box.login {
         top: 0;
     }
 
-    .formBx.active {
+    .formBox.active {
         left: 0;
         top: 150px;
     }

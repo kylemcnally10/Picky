@@ -1,29 +1,3 @@
-//PokeAPI
-
-var pokiImg = document.querySelector('.poki_img')
-
-var pokiForm = document.querySelector('#poki_finder')
-
-pokiForm.addEventListener('submit', function (event) {
-    event.preventDefault()
-
-    let poki = pokiForm.children[0].value
-
-    fetch(`https://pokeapi.co/api/v2/pokemon/${poki}`)
-        .then(response => response.json())
-        .then(data => {
-            let img = data.sprites.front_default;
-            let name = data.name
-
-            pokiImg.innerHTML += `
-        <img src="${img}" alt="Pokemon Img">
-        <p>${name}</P>
-        `
-        })
-        .catch(err => console.log(err))
-})
-
-
 //Yelp API
 
 let queryURL = "https://api.yelp.com/v3/businesses/search";

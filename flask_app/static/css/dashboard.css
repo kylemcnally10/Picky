@@ -4,7 +4,7 @@
     font-family: 'Ubuntu', sans-serif;
 }
 
-.dashBodyBlue {
+.boxBody {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,15 +12,7 @@
     background: #9e36f4;
 }
 
-.dashBodyRed {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: #9e36f4;
-}
-
-.dashContainer {
+.boxContainer {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,7 +21,7 @@
     height: 500px;
 }
 
-.dashBlueBg {
+.boxBg {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -41,7 +33,7 @@
     box-shadow: 0 5px 45px rgba(0, 0, 0, 0.15);
 }
 
-.dashButtonBlue {
+.boxBtn {
     cursor: pointer;
     padding: 10px 20px;
     color: #9e36f4;
@@ -53,7 +45,7 @@
     border-radius: 100px;
 }
 
-.welcomeBar {
+.instructionBar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -61,7 +53,7 @@
     width: 100%;
 }
 
-.welcomeText {
+.instructionText {
     padding: 10px 20px;
     margin: 10px;
     color: white;
@@ -145,29 +137,6 @@
     width: 98%;
     padding: 10px;
 }
-
-
-.dashButtonRed {
-    cursor: pointer;
-    padding: 10px 20px;
-    color: #9e36f4;
-    font-size: 16px;
-    font-weight: 500;
-    border: none;
-    margin: 10px;
-    background: white;
-    border-radius: 100px;
-}
-
-/* .welcomeBar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: auto;
-    margin-left: auto;
-} */
 
 .resultsImg {
     max-height: 200px;
